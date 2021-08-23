@@ -1,0 +1,94 @@
+
+
+
+##some jsx code##
+//import 'semantic-ui-css/semantic.min.js'
+// const variable = 8;
+
+// class myApp extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <ShowMy />
+//             </div>
+//         );
+//     };
+
+
+// };
+function GeoMy() {
+    return (
+        window.navigator.geolocation.getCurrentPosition(
+            position => console.log(position),
+            err => console.log(err)
+        )
+    );
+}
+
+const App = () => {
+    return ( <
+        div >
+        <
+        div className = "josh" > < /div> <
+        p > {
+            GeoMy(),
+            console.log(GeoMy['latitude']),
+            // getElementsByClassName('josh') = GeoMy['latitude'],
+
+        } <
+        /p> {
+            /* 
+                                Not working due to missing argument in get current pos
+                                <p>
+                                    Get current loc: <br />
+                                    {navigator.geolocation.getCurrentPosition()}
+                                </p> 
+                                
+                            not working as well
+
+                            </div>
+                            <div class="watch-pos">
+                                <p>
+                                    Get current loc: <br />
+                                    {navigator.geolocation.watchPosition()}
+                                </p>
+                                Not working because getCurrentPosition didn't have arguments
+                                
+                                <p>
+                                    {window.navigator.geolocation.getCurrentPosition}
+                                </p>
+                                {console.log(window.navigator.geolocation.getCurrentPosition)} */
+        } <
+        /div>
+
+
+    );
+}
+
+// class ShowWeather extends React.Component {
+// will check if user is in what hemispere
+// if summer and northern hemisphere and between June 21 and September 21 give "summer time" -> try insert emoji
+// - winter Dec 22 to March 20
+// southern Hem  - summer Dec 22 to March 20 and  winter From June 21 to Sept 21
+
+//if user geolocation will be on one of the hemispheres / getCurrentPosition() also check current date
+// };
+// If latitude negative = Southern Hemispere 
+// 
+//function ShowMy() {
+//     var myLoc = navigator.geolocation.getCurrentPosition();
+//     console.log(myLoc);
+//    render(
+//     return {
+//         <div>
+//             <h1>
+//                 otuehaose
+//             </h1>
+//             ThisMy life
+//         </div>
+//     };
+
+//    );
+//     }
+
+reactDom.render( < App / > , document.getElementById('root'));
