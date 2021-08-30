@@ -4,7 +4,7 @@ import VideoList from "./VideoList";
 import youtube from "../api/youtube";
 export default class App extends React.Component {
   // why not 'async' before onTermSubmit
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: null };
   onTermSubmit = async (term) => {
     // precofigured axios class so can use 'get'
     const response = await youtube.get("./search", {
@@ -16,6 +16,9 @@ export default class App extends React.Component {
     // need to be in curly braces
     this.setState({ videos: response.data.items });
   };
+  onVideoSelect = (video) => {
+    console.log("bullshit on Selected Video", video);
+  };
   render() {
     return (
       <div className="ui container">
@@ -24,7 +27,10 @@ export default class App extends React.Component {
         <SearchBar onFormSubmit={this.onTermSubmit} />
         {/* updates on 5 */}
         Length of videos {this.state.videos.length}
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          onVideoSelect={this.onVideoSelect}
+          videos={this.state.videos}
+        />
       </div>
     );
   }
