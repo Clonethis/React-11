@@ -24,7 +24,7 @@ export default class App extends React.Component {
         <SearchBar onFormSubmit={this.onTermSubmit} />
         {/* updates on 5 */}
         Length of videos {this.state.videos.length}
-        <VideoList videos={this.state.videos.length} />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
